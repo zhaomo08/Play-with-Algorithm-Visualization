@@ -1,7 +1,3 @@
-import javafx.geometry.Pos;
-
-import java.util.LinkedList;
-import java.util.Stack;
 import java.awt.*;
 
 public class AlgoVisualizer {

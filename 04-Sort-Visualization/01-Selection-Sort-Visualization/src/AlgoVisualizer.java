@@ -20,18 +20,20 @@ public class AlgoVisualizer {
         });
     }
 
+
+    // 动画逻辑
     private void run(){
 
-        frame.render(data);
-        AlgoVisHelper.pause(DELAY);
+        setData(0, -1, -1);
 
         for( int i = 0 ; i < data.N() ; i ++ ){
             // 寻找[i, n)区间里的最小值的索引
             int minIndex = i;
+            setData(i, -1, minIndex);
+
             for( int j = i + 1 ; j < data.N() ; j ++ ){
 
-                frame.render(data);
-                AlgoVisHelper.pause(DELAY);
+                setData(i, j, minIndex);
                 if( data.get(j) < data.get(minIndex) ){
                     minIndex = j;
                     frame.render(data);
@@ -40,9 +42,18 @@ public class AlgoVisualizer {
             }
 
             data.swap(i , minIndex);
-            frame.render(data);
-            AlgoVisHelper.pause(DELAY);
+            setData(i + 1, -1, -1);
+
         }
+
+        setData(data.N(), -1, -1);
+    }
+
+
+    private void setData(int orderedIndex, int currentCompareIndex, int currentMinIndex) {
+        data.orderedIndex = orderedIndex;
+        data.currentCompareIndex = currentCompareIndex;
+        data.currentMinIndex = currentMinIndex;
 
         frame.render(data);
         AlgoVisHelper.pause(DELAY);

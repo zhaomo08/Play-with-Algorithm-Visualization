@@ -1,5 +1,5 @@
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
 public class AlgoFrame extends JFrame{
 
@@ -61,7 +61,15 @@ public class AlgoFrame extends JFrame{
             // 具体绘制
             int w = canvasWidth/data.N();
             for(int i = 0 ; i < data.N() ; i ++ ) {
-                AlgoVisHelper.setColor(g2d, AlgoVisHelper.LightBlue);
+                if (i < data.orderedIndex)
+                    AlgoVisHelper.setColor(g2d, AlgoVisHelper.Red);
+                else
+                    AlgoVisHelper.setColor(g2d, AlgoVisHelper.Grey);
+
+                if (i == data.currentCompareIndex)
+                    AlgoVisHelper.setColor(g2d, AlgoVisHelper.LightBlue);
+                if (i == data.currentMinIndex)
+                    AlgoVisHelper.setColor(g2d, AlgoVisHelper.Indigo);
                 AlgoVisHelper.fillRectangle(g2d, i * w, canvasHeight - data.get(i), w - 1, data.get(i));
             }
         }

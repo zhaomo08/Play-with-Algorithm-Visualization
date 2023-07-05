@@ -109,9 +109,9 @@ public class AlgoVisualizer {
         int sceneHeight = 800;
         int N = 100;
 
-        AlgoVisualizer vis = new AlgoVisualizer(sceneWidth, sceneHeight, N, TwoWaysQuickSortData.Type.Default);
+//        AlgoVisualizer vis = new AlgoVisualizer(sceneWidth, sceneHeight, N, TwoWaysQuickSortData.Type.Default);
         // AlgoVisualizer vis = new AlgoVisualizer(sceneWidth, sceneHeight, N, TwoWaysQuickSortData.Type.NearlyOrdered);
-        // AlgoVisualizer vis = new AlgoVisualizer(sceneWidth, sceneHeight, N, TwoWaysQuickSortData.Type.Identical);
+        AlgoVisualizer vis = new AlgoVisualizer(sceneWidth, sceneHeight, N, TwoWaysQuickSortData.Type.Identical);
 
     }
 }

@@ -31,7 +31,7 @@ public class AlgoVisualizer {
         setData(-1, -1, false);
 
         if(!go(data.getEntranceX(), data.getEntranceY()))
-            System.out.println("The maze has NO solution!");
+            System.out.println("The maze has  NO solution!");
 
         setData(-1, -1, false);
     }
@@ -74,7 +74,7 @@ public class AlgoVisualizer {
 
     public static void main(String[] args) {
 
-        String mazeFile = "maze_101_101.txt";
+        String mazeFile = "/Users/mesay/GitHub_Project/Play-with-Algorithm-Visualization/05-Maze-Solver/01-Maze-Files-Processing/maze_101_101.txt";
 
         AlgoVisualizer vis = new AlgoVisualizer(mazeFile);
     }
